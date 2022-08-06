@@ -1,6 +1,7 @@
 import random
 import sys
 
+
 def random_words(filename='Words.txt'):
     """
     读取词库文件，并选出25个词
@@ -43,6 +44,3 @@ def print_words(words):
                 "有多少个非中文字母，对齐时就多加几个半角空格"
                 words[i] = words[i].ljust(len(words[i]) + cnt, " ")
                 print('{0:{1}<{2}}'.format(words[i],chr(12288),longest + cnt), end=chr(12288))
-
-
-print_words(random_words())
