@@ -2,7 +2,7 @@ import random
 import sys
 
 
-def random_words(filename):
+def random_words(filename='Words.txt'):
     """
     读取词库文件，并选出25个词
     :param filename: 词库文件名称
@@ -46,3 +46,4 @@ def print_words(words):
                 print('{0:{1}<{2}}'.format(words[i],chr(12288),longest+cnt+1), end="")
 
 
+print_words(random_words())
