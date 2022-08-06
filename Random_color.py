@@ -1,10 +1,10 @@
 import random
 
-c = ['X', 'O', 'B', 'X', 'O', # X -> Blue Agent, 先手词, 9个
-     'B', 'X', 'O', 'B', 'X', # O -> Red Agent, 后手词, 8个
-     'O', 'B', 'X', 'O', 'B', # B -> Innocent Bystander, 中立词, 7个
-     'X', 'O', 'B', 'X', 'O', # A -> Assassin, 杀手词, 1个
-     'B', 'X', 'O', 'A', 'X']
+c = ['1', '0', '/', '1', '0', # 1 -> Blue Agent, 先手词, 9个
+     '/', '1', '0', '/', '1', # 0 -> Red Agent, 后手词, 8个
+     '0', '/', '1', '0', '/', # / -> Innocent Bystander, 中立词, 7个
+     '1', '0', '/', '1', '0', # X -> Assassin, 杀手词, 1个
+     '/', '1', '0', 'X', '1']
 
 random.shuffle(c)
 
