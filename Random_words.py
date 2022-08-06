@@ -1,7 +1,6 @@
 import random
 import sys
 
-
 def random_words(filename='Words.txt'):
     """
     读取词库文件，并选出25个词
@@ -11,7 +10,7 @@ def random_words(filename='Words.txt'):
     wordlist = []
     f = open(filename, 'r', encoding='utf-8')
     for line in f:
-        if line[0] != '#':
+        if line[0] != '#' or line not in ['\n', '\r\n']:
             wordlist.append(line.strip('\n'))
     result = random.sample(wordlist, 25)
     return result
@@ -39,11 +38,11 @@ def print_words(words):
                     cnt = cnt + 1
             if cnt == 0:
                 "用全角空格进行对齐"
-                print('{0:{1}<{2}}'.format(words[i],chr(12288),longest+1), end="")
+                print('{0:{1}<{2}}'.format(words[i],chr(12288),longest), end=chr(12288))
             else:
                 "有多少个非中文字母，对齐时就多加几个半角空格"
-                words[i] = words[i].ljust(len(words[i])+cnt, " ")
-                print('{0:{1}<{2}}'.format(words[i],chr(12288),longest+cnt+1), end="")
+                words[i] = words[i].ljust(len(words[i]) + cnt, " ")
+                print('{0:{1}<{2}}'.format(words[i],chr(12288),longest + cnt), end=chr(12288))
 
 
 print_words(random_words())
